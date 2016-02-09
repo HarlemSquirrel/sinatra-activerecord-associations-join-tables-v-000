@@ -54,12 +54,12 @@ Next we need to define the appropriate relationships in our three models.
 ```ruby
 class User < ActiveRecord::Base
   has_many :user_items
-  has_many :items, through: user_items
+  has_many :items, through: :user_items
 end
 
 class Item < ActiveRecord::Base
   has_many :user_items
-  has_many :users, through: user_items
+  has_many :users, through: :user_items
 end
 
 class UserItem < ActiveRecord::Base 
